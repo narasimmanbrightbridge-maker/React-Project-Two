@@ -21,7 +21,7 @@ function Header() {
                     <div className="hidden md:block">
                         <ul className="flex space-x-8 items-center font-medium text-slate-600">
                             {navLinks.map((link) => (
-                                <li key={link} className="hover:text-blue-600 cursor-pointer transition-colors">
+                                <li key={link} className="font-bold hover:text-blue-600 cursor-pointer transition-colors">
                                     {link}
                                 </li>
                             ))}
