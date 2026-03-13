@@ -3,7 +3,7 @@ import BannerImg from '../imageTwo.webp';
 function BannerTwo () {
     return (
         <>
-        <section className="bannerSec bg-[#C7EABB]">
+        <section className="bannerSec bg-[#FFFBF1] mr-10 ml-10 rounded-3xl">
             <div className="container">
                 <div className="grid grid-cols-2">
                     <div className="content_section p-23 order-2">

@@ -3,7 +3,7 @@ import BannerImg from '../banner.webp';
 function Banner () {
     return (
         <>
-        <section className="bannerSec bg-[#F9F6C4]">
+        <section className="bannerSec bg-[#FFFBF1] mr-10 ml-10 rounded-3xl mt-10">
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     <div className="content_section p-5 md:p-23">
