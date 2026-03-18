@@ -3,9 +3,9 @@ import logo from './components/clients-7.webp';
 function footer () {
     return (
 
-        <footer className="foots m-10 bg-liner bg-[#fff] p-10 rounded-3xl">
+        <footer className="foots m-5 bg-liner bg-[#fff] p-10 rounded-3xl md:m-10">
             <div className="container">
-                <div className="grid grid-cols-4">
+                <div className="grid grid-cols-1 md:grid-cols-4">
                     <div className="abt">
                         <img className="logo" src={logo} />
                     </div>

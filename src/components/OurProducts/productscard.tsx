@@ -78,11 +78,11 @@ function OuProducts() {
     },
   ];
   return (
-    <section className="ProductsSlider pt-10 pb-10">
+    <section className="ProductsSlider">
       <div className="container mx-auto px-0">
         <h2 className="font-bold text-4xl m-10">Our Products</h2>
 
-        <div className="cards grid grid-cols-5 mr-20 ml-20 gap-5">
+        <div className="cards grid grid-cols-1 mr-20 ml-20 gap-5 md:grid-cols-3 lg:grid-cols-5">
           {ProductsCont.map((item) => (
             <div
               className="prod-sec bg-[#FFF] p-5 rounded-2xl shadow-2xl shadow-amber-100 cursor-pointer"
@@ -129,6 +129,7 @@ function OuProducts() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

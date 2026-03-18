@@ -49,7 +49,7 @@ function OurClients() {
           loop={true}
           // navigation={{clickable: true}}
           // pagination={{clickable: true}}
-          slidesPerView={1}
+          slidesPerView={2}
           breakpoints={{
             767: {
               slidesPerView: 2,
