@@ -6,6 +6,9 @@ import Banner from "./components/Home/banner";
 import BannerTwo from "./components/Home/bannerTwo";
 import Footer from "./footer.tsx";
 import AboutPage from "./pages/about.tsx";
+import Products from "./pages/products.tsx";
+import MainBanner from "./components/Home/main-banner";
+import SingleProducts from "./pages/productsdetails";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,13 +22,16 @@ function App() {
           path="/"
           element={
             <>
+              <MainBanner />
               <Banner />
               <BannerTwo />
             </>
           }
         ></Route>
 
-        <Route path="/about" element={<AboutPage />}/>
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/productsdetails/:id" element={<SingleProducts />} />
       </Routes>
 
       <Footer />

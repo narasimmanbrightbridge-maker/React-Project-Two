@@ -1,5 +1,21 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+  background-color: #fff9ed;
+}
+button {
+ background-color: #5a684e;
+ font-weight: 800;
+ color : #fff;
+ margin-top: 2%;
+ border-radius: 50px;
+}
+button:hover {
+  border: unset;
+  background-color: #fff;
+  color: #000;
+}
 #root {
   max-width: 100%;
   margin: 0 auto;
@@ -49,4 +65,26 @@
 header a {
 font-weight: 600;
 color: #000;
+}
+
+.ProductsSlider button a {
+  color: #fff;
+  font-weight: bold;
+}
+.ProductsSlider button a:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+.none {
+  display: none;
+}
+
+.swiper-pagination-bullet-active {
+      background: #054a24 !important;
+}
+
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 5%;
 }

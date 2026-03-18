@@ -3,7 +3,7 @@ import logo from './components/clients-7.webp';
 function footer () {
     return (
 
-        <footer className="foots m-10 bg-liner bg-linear-to-br from-[#FFFBF1] to-[#FFF2D0] p-10 rounded-3xl">
+        <footer className="foots m-10 bg-liner bg-[#fff] p-10 rounded-3xl">
             <div className="container">
                 <div className="grid grid-cols-4">
                     <div className="abt">
