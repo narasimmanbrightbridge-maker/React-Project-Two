@@ -9,6 +9,7 @@ import AboutPage from "./pages/about.tsx";
 import Products from "./pages/products.tsx";
 import MainBanner from "./components/Home/main-banner";
 import SingleProducts from "./pages/productsdetails";
+import ContactUs from "./pages/contact.tsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,6 +33,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/products" element={<Products />} />
         <Route path="/productsdetails/:id" element={<SingleProducts />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
 
       <Footer />

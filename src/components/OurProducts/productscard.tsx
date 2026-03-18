@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import { Link } from "react-router-dom";
 import ImageOne from "../product-10.webp";
 import ImageTwo from "../product-4.webp";
-// import ImageThree from "../product-4.webp";
+import ImageThree from "../product-4.webp";
 // import ImageFour from "../product-4.webp";
 // import ImageFive from "../product-4.webp";
 import Star from "../5star.png";
@@ -66,6 +66,34 @@ function OuProducts() {
           price: "₹1000",
           discoutPrice: "850",
           image: slideTwo,
+        },
+        {
+          id: "v1",
+          color: "red",
+          price: "₹1000",
+          discoutPrice: "850",
+          image: slideThree,
+        },
+      ],
+    },
+    {
+      defaultImg: ImageThree,
+      id: 1,
+      starimg: Star,
+      tag: "Top Rated",
+      name: "Product-One",
+      price: "₹800",
+      priceOne: "₹700",
+      phara:
+        "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Donec velit neque auctor sit amet aliquam vel ullamcorper sit amet ligula.",
+
+      variant: [
+        {
+          id: "v1",
+          color: "red",
+          price: "₹1000",
+          discoutPrice: "850",
+          image: slideThree,
         },
         {
           id: "v1",
