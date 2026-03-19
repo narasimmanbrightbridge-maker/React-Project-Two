@@ -1,0 +1,14 @@
+simple api creation
+
+1. create a db.json
+2. insert the api codes
+3. npm install json-server
+4. npx json-server --watch db.json --port 8000
+
+
+react project creation
+
+5. npm create vite@latest my-react-app -- --template react
+6. cd my-react-app
+7. npm install swiper
+8. npm install tailwind
