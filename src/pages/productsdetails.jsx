@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay, A11y } from "swiper/modules";
 
+import SampleAp from "../components/APIFrontPage"
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -18,7 +20,7 @@ function productDetails() {
   }
   return (
     <>
-      <section className="Single_Products">
+      <section className="Single_Products mb-5">
         <div className="container grid grid-cols-1 md:grid-cols-2">
           <div className="imagesSec block w-1xl bg-[#FFF] m-10 rounded-3xl md:ml-10 mr-10 mt-10">
             <Swiper
@@ -57,66 +59,9 @@ function productDetails() {
           </div>
         </div>
 
-        {/* related-products */}
-
-        {/* <div className="related-product">
-          <h2 className="font-bold text-3xl">Related Products</h2>
-          <Swiper
-            modules={[Pagination, Navigation, A11y, Autoplay]}
-            spaceBetween={20}
-            slidesPerView={1}
-            navigation={{ clickable: true }}
-            nested={true}
-          >
-            <SwiperSlide>
-              <div className="cards grid grid-cols-1 mr-20 ml-20 gap-5 md:grid-cols-3 lg:grid-cols-5">
-                {typeof ProductsCont !== 'undefined' && ProductsCont.map((item) => (
-                  <div
-                    className="prod-sec bg-[#FFF] p-5 rounded-2xl shadow-2xl shadow-amber-100 cursor-pointer"
-                    key={item.id}
-                  >
-                    <div className="imgSect">
-                      <Swiper
-                        modules={[Pagination, Navigation, Autoplay, A11y]}
-                        spaceBetween={20}
-                        slidesPerView={1}
-                        pagination={{ clickable: true }}
-                      >
-                        {item.variant.map((v, idx) => (
-                          <SwiperSlide key={idx}>
-                            <img src={v.image} />
-                          </SwiperSlide>
-                        ))}
-                      </Swiper>
-                    </div>
-
-                    <div className="conts">
-                      <h2 className="font-bold text-1xl mt-5 text-left">
-                        {item.name}
-                      </h2>
-                      <div className="TwoCard flex justify-between mb-5">
-                        <p className="none">{item.phara}</p>
-                        <h2 className="font-bold line-through">{item.price}</h2>
-                        <h2 className="font-bold">{item.priceOne}</h2>
-                      </div>
-                      <img className="w-24 mb-5" src={Star} alt="" />
-                      <button className="block">
-                        <>
-                          <Link
-                            to={`/productsdetails/${item.name.toLowerCase().replace(/\s+/g, "-")}`}
-                            state={{ product: item }}
-                          >
-                            View Product
-                          </Link>
-                        </>
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div> */}
+        <>
+        <SampleAp />
+        </>
 
       </section>
     </>

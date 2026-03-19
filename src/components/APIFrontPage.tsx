@@ -1,26 +1,27 @@
+import { useEffect, useState } from 'react';
 
-// import { error } from "console"
-import { useEffect, useState } from "react"
 function RelatedProduct() {
-    const [products, setProducts] = useState([]);
+
+    const [ products, SetProducts ] = useState ([]);
     useEffect(() => {
         fetch('http://localhost:8000/post')
         .then((res) => {
             if(!res.ok) {
-                throw new Error ("failed to featch data");
+                throw new Error ("Failed To Load")
             }return res.json();
         })
         .then((data) => {
-            setProducts(data.post || data);
-        })
-        .catch((err) => console.error("error data load:", err))
-    }, []);
+            SetProducts(data.post || data);
+        }).catch((err) => console.error("Failed To Data:", err))
+    })
+   
     return(
         <section className="m-10">
-            <h1 className="font-bold text-3xl">Related Products</h1>
+            <h1 className="font-bold text-3xl mb-5">Related Products</h1>
             <div className="container">
                 <div className="grid grid-cols-4 gap-5">
-                    {products.map((item) => (
+
+                    {products.map((item) =>
                     <div className="cards_sec p-10 bg-[#FFF] P-5 rounded-3xl">
                         <div className="img_sec">
                             <img className="w-50 block m-auto" src={item.image} />
@@ -35,7 +36,8 @@ function RelatedProduct() {
                             </div>
                         </div>
                     </div>
-                   ) )}
+                    )}
+                   
                 </div>
             </div>
         </section>

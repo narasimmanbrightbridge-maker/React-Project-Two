@@ -10,7 +10,7 @@ import Products from "./pages/products.tsx";
 import MainBanner from "./components/Home/main-banner";
 import SingleProducts from "./pages/productsdetails";
 import ContactUs from "./pages/contact.tsx";
-import Sample from "./components/APIFrontPage.tsx"
+// import Sample from "./components/APIFrontPage.tsx"
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,7 +27,7 @@ function App() {
               <MainBanner />
               <Banner />
               <BannerTwo />
-              <Sample />
+              {/* <Sample /> */}
             </>
           }
         ></Route>
