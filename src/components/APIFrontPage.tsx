@@ -1,8 +1,15 @@
 import { useEffect, useState } from 'react';
 
+type RelatedProductItem = {
+    image: string;
+    name: string;
+    priceOne: string | number;
+    priceTwo: string | number;
+};
+
 function RelatedProduct() {
 
-    const [ products, SetProducts ] = useState ([]);
+    const [ products, SetProducts ] = useState<RelatedProductItem[]>([]);
     useEffect(() => {
         fetch('http://localhost:8000/post')
         .then((res) => {
@@ -13,7 +20,7 @@ function RelatedProduct() {
         .then((data) => {
             SetProducts(data.post || data);
         }).catch((err) => console.error("Failed To Data:", err))
-    })
+    }, [])
    
     return(
         <section className="m-10">
@@ -22,7 +29,7 @@ function RelatedProduct() {
                 <div className="grid grid-cols-4 gap-5">
 
                     {products.map((item) =>
-                    <div className="cards_sec p-10 bg-[#FFF] P-5 rounded-3xl">
+                    <div key={item.name} className="cards_sec p-10 bg-[#FFF] P-5 rounded-3xl">
                         <div className="img_sec">
                             <img className="w-50 block m-auto" src={item.image} />
                         </div>

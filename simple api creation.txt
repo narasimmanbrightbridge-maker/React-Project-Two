@@ -12,3 +12,11 @@ react project creation
 6. cd my-react-app
 7. npm install swiper
 8. npm install tailwind
+
+
+vercel
+
+9. add vercel.json
+10. npm i -g vercel
+11. vercel
+12. vercel --prod
