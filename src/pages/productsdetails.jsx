@@ -1,23 +1,87 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay, A11y } from "swiper/modules";
+import { useEffect, useState } from "react";
 
-import SampleAp from "../components/APIFrontPage"
+import RelatedProduct from "../components/APIFrontPage";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { useLocation, useParams } from "react-router-dom";
-function productDetails() {
+
+const slugifyProductName = (name = "") =>
+  name.toLowerCase().trim().replace(/\s+/g, "-");
+
+function ProductDetails() {
   const location = useLocation();
   const { id } = useParams();
+  const [product, setProduct] = useState(location.state?.product ?? null);
+  const [isLoading, setIsLoading] = useState(!location.state?.product);
 
-  const product = location.state?.product;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
+  useEffect(() => {
+    if (location.state?.product) {
+      setProduct(location.state.product);
+      setIsLoading(false);
+      return;
+    }
+
+    let isMounted = true;
+
+    setIsLoading(true);
+
+    fetch("http://localhost:8000/post")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed To Load");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        if (!isMounted) {
+          return;
+        }
+
+        const incomingProducts = Array.isArray(data?.post)
+          ? data.post
+          : Array.isArray(data)
+            ? data
+            : [];
+
+        const matchedProduct =
+          incomingProducts.find((item) => slugifyProductName(item.name) === id) ?? null;
+
+        setProduct(matchedProduct);
+      })
+      .catch((err) => {
+        console.error("Failed To Data:", err);
+        if (isMounted) {
+          setProduct(null);
+        }
+      })
+      .finally(() => {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [id, location.state]);
+
+  if (isLoading) {
+    return <div className="m-10 font-bold">Loading product...</div>;
+  }
 
   if (!product) {
-    return;
-    <div className="font-bold">Products Not Found!</div>;
+    return <div className="m-10 font-bold">Product not found for "{id}".</div>;
   }
+
   return (
     <>
       <section className="Single_Products mb-5">
@@ -29,12 +93,12 @@ function productDetails() {
               slidesPerView={1}
               pagination={{ clickable: true }}
             >
-              {product.variant.map((v, index) => (
-                <SwiperSlide>
+              {(product.variant ?? []).map((v, index) => (
+                <SwiperSlide key={v.id || index}>
                   <img
                     className="w-2xs block mx-auto p-5"
                     src={v.image}
-                    alt=""
+                    alt={product.name}
                   />
                 </SwiperSlide>
               ))}
@@ -60,11 +124,11 @@ function productDetails() {
         </div>
 
         <>
-        <SampleAp />
+        <RelatedProduct currentProductName={product.name} />
         </>
 
       </section>
     </>
   );
 }
-export default productDetails;
+export default ProductDetails;

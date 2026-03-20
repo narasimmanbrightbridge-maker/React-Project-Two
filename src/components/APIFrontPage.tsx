@@ -31,8 +31,8 @@ function RelatedProduct() {
                                 <h2 className="font-bold text-left pt-5 pb-5 text-2xl">{item.name}</h2>
                             </div>
                             <div className="pricetags flex gap-5 align-center">
-                                <span className="font-bold line-through">₹{item.priceOne}</span>
-                            <span className="font-bold text-2xl" >₹{item.priceTwo}</span>
+                                <span className="font-bold line-through">{item.priceOne}</span>
+                            <span className="font-bold text-2xl" >{item.priceTwo}</span>
                             </div>
                         </div>
                     </div>

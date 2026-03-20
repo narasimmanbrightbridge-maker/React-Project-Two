@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 
 function FormSection() {
   const [formData, setFormData] = useState({
@@ -10,7 +10,9 @@ function FormSection() {
 
   const [status, setStatus] = useState("");
 
-  const handleChange = (event) => {
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -18,7 +20,7 @@ function FormSection() {
     }));
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus("Sending...");
 

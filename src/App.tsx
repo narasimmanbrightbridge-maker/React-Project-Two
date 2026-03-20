@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Header from "./header";
@@ -13,8 +12,6 @@ import ContactUs from "./pages/contact.tsx";
 // import Sample from "./components/APIFrontPage.tsx"
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <BrowserRouter>
       <Header />

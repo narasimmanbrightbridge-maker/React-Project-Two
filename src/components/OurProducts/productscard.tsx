@@ -107,14 +107,14 @@ function OuProducts() {
   ];
   return (
     <section className="ProductsSlider">
-      <div className="container mx-auto px-0">
+      <div className="block mx-auto px-0">
         <h2 className="font-bold text-4xl m-10">Our Products</h2>
 
         <div className="cards grid grid-cols-1 mr-20 ml-20 gap-5 md:grid-cols-3 lg:grid-cols-5">
-          {ProductsCont.map((item) => (
+          {ProductsCont.map((item, index) => (
             <div
               className="prod-sec bg-[#FFF] p-5 rounded-2xl shadow-2xl shadow-amber-100 cursor-pointer"
-              key={item.id}
+              key={`${item.id}-${index}`}
             >
               <div className="imgSect">
                
@@ -124,9 +124,9 @@ function OuProducts() {
                     slidesPerView={1}
                     pagination={{ clickable: true }}
                   >
-                    {item.variant.map((v) => (
-                      <SwiperSlide key={v.id}>
-                        <img src={v.image}  />
+                    {item.variant.map((v, variantIndex) => (
+                      <SwiperSlide key={`${v.id}-${variantIndex}`}>
+                        <img src={v.image} alt={`${item.name}-${variantIndex + 1}`}  />
                       </SwiperSlide>
                     ))}
                   </Swiper> 
