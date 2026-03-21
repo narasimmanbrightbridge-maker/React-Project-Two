@@ -2,20 +2,20 @@
 {
     "post": [
         {
-            "id": 1, "name": "product-one", "image": "/images/product-6.webp", "priceOne": "1200", "priceTwo": "1000"
+            "id": 1, "name": "product-one", "image": "/images/product-6.webp", "priceOne": "₹1200", "priceTwo": "₹1000"
         
         },
         {
-            "id": 2, "name": "product-two", "image": "/images/product-8.webp", "priceOne": "999", "priceTwo": "899"
+            "id": 2, "name": "product-two", "image": "/images/product-8.webp", "priceOne": "₹999", "priceTwo": "₹899"
         },
         {
-            "id": 3, "name": "product-three", "image": "/images/product-3.webp", "priceOne": "700", "priceTwo": "600"
+            "id": 3, "name": "product-three", "image": "/images/product-3.webp", "priceOne": "₹700", "priceTwo": "₹600"
         },
         {
-            "id": 4, "name": "product-four", "image": "/images/product-4.webp", "priceOne": "500", "priceTwo": "400"
+            "id": 4, "name": "product-four", "image": "/images/product-4.webp", "priceOne": "₹500", "priceTwo": "₹400"
         },
         {
-            "id": 5, "name": "product-five", "image": "/images/product-10.webp", "priceOne": "1800", "priceTwo": "1000"
+            "id": 5, "name": "product-five", "image": "/images/product-10.webp", "priceOne": "₹1800", "priceTwo": "₹1000"
         }
     ]
 }

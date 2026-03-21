@@ -60,7 +60,7 @@ function ProductDetails() {
       .catch((err) => {
         console.error("Failed To Data:", err);
         if (isMounted) {
-          setProduct(null);
+          setProduct(null); 
         }
       })
       .finally(() => {
@@ -110,10 +110,10 @@ function ProductDetails() {
             <p className="text-left pt-5">{product.phara}</p>
             <div className="price_col mt-5 flex gap-3 align-bottom">
               <p className="text-left pb-5 font-bold text-2xl line-through">
-                ₹{product.price}
+                {product.price}
               </p>
               <p className="text-left font-bold text-4xl">
-                ₹{product.priceOne}
+                {product.priceOne}
               </p>
             </div>
             <div className="cardts flex gap-5">
